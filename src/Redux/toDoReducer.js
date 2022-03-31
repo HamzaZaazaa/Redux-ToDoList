@@ -15,7 +15,6 @@ const initialeState = {
     ]
 }
 function toDoReducer(state=initialeState, action) {
-    return 
     switch(action.type){
         case DONE: return {
             ...state, tasks:state.tasks.map(tasks=>
@@ -26,9 +25,9 @@ function toDoReducer(state=initialeState, action) {
             ...state, tasks: state.tasks.filter(task =>task.id !== action.payload)
         }
         case EDIT_TASK: return {
-            ...state, tasks:state.tasks.map(tasks=>
-                tasks.id ===action.payload.id ? 
-                {...tasks,text: !action.payload.text} : tasks)
+            ...state, tasks:state.tasks.map(task=>
+                task.id ===action.payload.id ? 
+                {...task,text: action.payload.text} : task)
         }
         case ADD_TASK: return {
              ...state, tasks:[...state.tasks, {

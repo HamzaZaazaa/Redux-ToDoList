@@ -15,7 +15,7 @@ function EditTask({todo}) {
   
     return (
       <>
-        <Button variant="Warning" onClick={handleShow}>
+        <Button variant="warning" onClick={handleShow}>
           Edit
         </Button>
   

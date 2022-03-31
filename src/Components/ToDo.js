@@ -9,10 +9,10 @@ export default function ToDo({todo}) {
     const dispatch =useDispatch()
   return (
     <div className='tasks'>
-        <EditTask todo={todo} />
         <p style={{textDecoration:todo.process ? "line-through": null}}>{todo.text}</p>
         <Button variant="success" onClick={()=> dispatch(done(todo.id))}>Completed</Button>
         <Button variant="danger" onClick={()=> dispatch(deletetask(todo.id))}>Delete</Button>
+        <EditTask todo={todo} />
         
     </div>
   )
